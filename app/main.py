@@ -1,1 +1,4 @@
-print("bimbim")
+from menu import menu
+
+
+menu()
