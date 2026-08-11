@@ -1,9 +1,6 @@
-from managers.products_manager import ProductManager
+from managers.warehouse_manager import WarehouseManager
 
-
-productm = ProductManager()
-
-
+productm = WarehouseManager()
 
 def menu():
     while True:
@@ -16,4 +13,3 @@ def menu():
             case "2":
                 productm.ver_productos()
                 continue
-
