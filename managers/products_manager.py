@@ -1,6 +1,5 @@
 from repositories.products import Products
 
-
 class ProductManager:
     def __init__(self):
         self.lista_productos = []
