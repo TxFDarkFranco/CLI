@@ -29,13 +29,12 @@ class WarehouseManager:
             print("Asigna un almacen")
             return
 
-        almacen = input()
         id = input("Ingresa el un ID del producto: ")
         name = input("Ingresa el nombre del producto: ")
         categories = input("Ingresa la categoria del producto: ")
         sku = input("Ingresa el sku del producto: ")
 
-        nuevo_producto = Products(almacen, id, name, categories, sku)
+        nuevo_producto = Products(id, name, categories, sku)
 
         for index, almacen in enumerate(self.lista_warehouses):
             print(f"{index + 1}, {almacen}")
@@ -43,26 +42,20 @@ class WarehouseManager:
         seleccion_almacen = int(input("Ingresa tu eleccion")) - 1
 
         almacen_seleccionado = self.lista_warehouses[seleccion_almacen]
-        if almacen_seleccionado not in self.lista_warehouses:
-            print("No es valido")
-            return
 
-        if nuevo_producto in self.lista_productos:
-            print("El producto ya esta registrado")
+        if almacen_seleccionado not in self.lista_productos:
+            self.lista_productos[almacen_seleccionado] = []
+
+        existe = any(
+            p.id == nuevo_producto.id
+            for p in self.lista_productos[almacen_seleccionado]
+        )
+
+        if existe:
+            print("El producto ya esta registrado en este almacen")
         else:
-            self.lista_productos.append(nuevo_producto)
-
-
-        
-
-        
-
-
-
-        # self.lista_productos.append(nuevo_producto)
-        print("Producto insertado en almacen")
-
-
+            self.lista_productos[almacen_seleccionado].append(nuevo_producto)
+            print(f"Producto insertado con éxito en: {almacen_seleccionado}")
 
     def ver_productos(self):
         if not self.lista_productos:
@@ -71,4 +64,3 @@ class WarehouseManager:
 
         for index, product in enumerate(self.lista_productos):
             print(f"{index + 1}. {product}")
-

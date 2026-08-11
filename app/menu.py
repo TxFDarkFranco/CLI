@@ -2,7 +2,16 @@ from managers.warehouse_manager import WarehouseManager
 
 productm = WarehouseManager()
 
+
 def menu():
+    print("=" * 25)
+    print("Warehouse & Logistics Management System")
+    print("=" * 25)
+    print("1.Insertar productos")
+    print("2.Ver productos")
+    print("3.Crear alamacen")
+    print("4.Ver alamcenes")
+
     while True:
         opcion = input("Elige una opcion: ")
         match opcion:
