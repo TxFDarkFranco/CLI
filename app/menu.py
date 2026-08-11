@@ -13,3 +13,11 @@ def menu():
             case "2":
                 productm.ver_productos()
                 continue
+
+            case "3":
+                productm.crear_almacen()
+                continue
+
+            case "4":
+                productm.ver_almacenes()
+                continue

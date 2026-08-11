@@ -1,8 +1,9 @@
-class Almacenes:
-    def init(self, symbol, name: str, quantity: int):
+class almacenes:
+    def __init__(self, symbol: str, name: str, quantity: int, product: str):
         self.symbol = symbol
         self.name = name
         self.quantity = quantity
+        self.product = product
 
-    def str(self):
-        return f"{self.symbol}, {self.name}, {self.quantity}"
+    def __str__(self):
+        return f"{self.symbol}, {self.name}, {self.quantity}, {self.product}"
