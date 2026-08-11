@@ -29,4 +29,3 @@ class WarehouseManager:
         for index, product in enumerate(self.lista_productos):
             print(f"{index + 1}, {product}")
 
-    
