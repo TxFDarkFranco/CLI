@@ -1,6 +1,8 @@
 from managers.warehouse_manager import WarehouseManager
+from managers.suppliers_manager import SuppliersManager
 
 productm = WarehouseManager()
+supplierstm = SuppliersManager()
 
 
 def menu():
@@ -11,6 +13,8 @@ def menu():
     print("2.Ver productos")
     print("3.Crear alamacen")
     print("4.Ver alamcenes")
+    print("5.Crear Suplidores")
+    print("6.Ver Suplidores")
 
     while True:
         opcion = input("Elige una opcion: ")
@@ -30,3 +34,9 @@ def menu():
             case "4":
                 productm.ver_almacenes()
                 continue
+
+            case "5":
+                supplierstm.crear_suppliers()
+
+            case "6":
+                supplierstm.ver_suppliers()
