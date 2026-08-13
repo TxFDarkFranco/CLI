@@ -20,6 +20,7 @@ def menu():
         print("7. Editar almacenes")
         print("8. Eliminar almacenes")
         print("9. Salir")
+        print("10. Guardar datos")
 
         opcion = input("\nElige una opcion: ")
 
@@ -42,8 +43,8 @@ def menu():
                 productm.eliminar_almacenes()
             case "9":
                 print("Programa finalizado")
-                break       
-            case"10":
-                guardar_datos()
+                break
+            case "10":
+                guardar_datos(productm, supplierstm)
 
 

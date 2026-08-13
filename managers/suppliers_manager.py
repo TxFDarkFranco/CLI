@@ -24,3 +24,5 @@ class SuppliersManager:
         
         for index, suplidor in enumerate(self.lista_suppliersmanager):
                     print(f"{index + 1}. {suplidor}")
+
+    
