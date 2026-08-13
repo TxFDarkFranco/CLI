@@ -10,7 +10,7 @@ class WarehouseManager:
     def crear_almacen(self):
         symbol = input("Ingresa el identificador del almacen: ")
         name = input("Ingresa el nombre del almacen: ")
-        quantity =int(input("Ingresa la capacidad del almacen: "))
+        quantity = int(input("Ingresa la capacidad del almacen: "))
 
         nuevo_almacen = almacenes(symbol, name, quantity)
         self.lista_warehouses.append(nuevo_almacen)
@@ -36,9 +36,13 @@ class WarehouseManager:
                 almacen = self.lista_warehouses[seleccion]
                 print("Deja en blank si no quieres modificar nada")
 
-                nuevo_symbol = input(f"Nuevo identificador ({getattr(almacen, 'symbol', '')}): ")
+                nuevo_symbol = input(
+                    f"Nuevo identificador ({getattr(almacen, 'symbol', '')}): "
+                )
                 nuevo_name = input(f"Nuevo nombre ({getattr(almacen, 'name', '')}): ")
-                nuevo_quantity = input(f"Nueva capacidad ({getattr(almacen, 'quantity', '')}): ")
+                nuevo_quantity = input(
+                    f"Nueva capacidad ({getattr(almacen, 'quantity', '')}): "
+                )
 
                 if nuevo_symbol.strip():
                     almacen.symbol = nuevo_symbol
@@ -67,7 +71,9 @@ class WarehouseManager:
                 if almacen_a_eliminar in self.lista_productos:
                     del self.lista_productos[almacen_a_eliminar]
 
-                print(f"Almacen '{almacen_a_eliminar}' y sus productos asociados fueron eliminados.")
+                print(
+                    f"Almacen '{almacen_a_eliminar}' y sus productos asociados fueron eliminados."
+                )
             else:
                 print("Selección inválida")
         except ValueError:
