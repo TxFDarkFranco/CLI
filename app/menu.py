@@ -31,6 +31,9 @@ def menu():
 
             case "3":
                 productm.crear_almacen()
+                print(
+                    f"DEBUG menu: productm.lista_warehouses={len(productm.lista_warehouses)} id={id(productm)}"
+                )
                 continue
 
             case "4":
@@ -44,4 +47,4 @@ def menu():
                 supplierstm.ver_suppliers()
 
             case "7":
-                guardar_datos()
+                guardar_datos(productm, supplierstm)

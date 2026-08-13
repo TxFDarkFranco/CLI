@@ -1,15 +1,28 @@
-from warehouse_manager import WarehouseManager
-from suppliers_manager import SuppliersManager
+from .warehouse_manager import WarehouseManager
+from .suppliers_manager import SuppliersManager
 import json
 
 productm = WarehouseManager()
 supplierm = SuppliersManager()
 
 
-def guardar_datos():
+def guardar_datos(productm=None, supplierm=None):
+    # allow being called with no args for backward compatibility
+    if productm is None:
+        productm = globals().get("productm")
+    if supplierm is None:
+        supplierm = globals().get("supplierm")
     datos = {"warehouse": [], "products": [], "suppliers": []}
 
-    for warehouses in productm.lista_warehouse:
+    # debug: mostrar tamaños para comprobar que recibimos datos
+    try:
+        print(
+            f"DEBUG guardar_datos: warehouses={len(productm.lista_warehouses)}, products_keys={len(productm.lista_productos)}, suppliers={len(supplierm.lista_suppliersmanager)}"
+        )
+    except Exception:
+        print("DEBUG guardar_datos: error leyendo estructuras")
+
+    for warehouses in productm.lista_warehouses:
         datos["warehouse"].append(
             {
                 "symbol": warehouses.symbol,
@@ -18,7 +31,7 @@ def guardar_datos():
             }
         )
 
-    for warehouse, products in productm.lista_productos.items:
+    for warehouse, products in productm.lista_productos.items():
         for producto in products:
             datos["products"].append(
                 {
@@ -44,3 +57,4 @@ def guardar_datos():
 
     with open("datos.json", "w", encoding="utf-8") as archivo:
         json.dump(datos, archivo, indent=4, ensure_ascii=False)
+    print("Datos guardados en datos.json")

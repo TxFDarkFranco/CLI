@@ -10,4 +10,4 @@ class Suppliers:
         self.price = price
 
     def __str__(self):
-        return f"{self.id}, {self.supplier}, {self.contact}, {self.gmail}, {self.product}, {self.price}"
+        return f"{self.id}, {self.name}, {self.contact}, {self.gmail}, {self.product}, {self.price}"

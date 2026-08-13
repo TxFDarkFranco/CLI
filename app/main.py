@@ -1,5 +1,12 @@
-from menu import menu
+import sys
+from pathlib import Path
 
-menu()
+if __name__ == "__main__" and __package__ is None:
+    project_root = Path(__file__).resolve().parent.parent
+    sys.path.insert(0, str(project_root))
 
-# jjkkj
+from app.menu import menu
+
+
+if __name__ == "__main__":
+    menu()
