@@ -1,50 +1,42 @@
-from managers.warehouse_manager import WarehouseManager
 from managers.suppliers_manager import SuppliersManager
+from managers.warehouse_manager import WarehouseManager
 from managers.utils import guardar_datos
-
-productm = WarehouseManager()
-supplierstm = SuppliersManager()
 
 
 def menu():
-    print("=" * 25)
-    print("Warehouse & Logistics Management System")
-    print("=" * 25)
-    print("1.Insertar productos")
-    print("2.Ver productos")
-    print("3.Crear alamacen")
-    print("4.Ver alamcenes")
-    print("5.Crear Suplidores")
-    print("6.Ver Suplidores")
-    print("7.Guardar datos")
+    productm = WarehouseManager()
+    supplierstm = SuppliersManager()
 
     while True:
-        opcion = input("Elige una opcion: ")
+        print("\n" + "=" * 25)
+        print("Warehouse & Logistics Management System")
+        print("=" * 25)
+        print("1. Insertar productos")
+        print("2. Ver productos")
+        print("3. Crear almacen")
+        print("4. Ver almacenes")
+        print("5. Crear suplidores")
+        print("6. Ver suplidores")
+        print("7. Editar almacenes")
+        print("8. Eliminar almacenes")
+        print("9. Salir")
+
+        opcion = input("\nElige una opcion: ")
+
         match opcion:
             case "1":
                 productm.insertar_productos()
-                continue
-
             case "2":
                 productm.ver_productos()
-                continue
-
             case "3":
                 productm.crear_almacen()
-                print(
-                    f"DEBUG menu: productm.lista_warehouses={len(productm.lista_warehouses)} id={id(productm)}"
-                )
                 continue
-
             case "4":
                 productm.ver_almacenes()
-                continue
-
             case "5":
                 supplierstm.crear_suppliers()
-
             case "6":
                 supplierstm.ver_suppliers()
 
             case "7":
-                guardar_datos(productm, supplierstm)
+                guardar_datos()

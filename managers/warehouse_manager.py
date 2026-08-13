@@ -1,5 +1,5 @@
 from repositories.products import Products
-from repositories.warehouse import almacenes
+from repositories.warehouse import Almacenes
 
 
 class WarehouseManager:
@@ -12,17 +12,9 @@ class WarehouseManager:
         name = input("Ingresa el nombre del almacen: ")
         quantity = input("Ingresa la capacidad del almacen: ")
 
-        nuevo_almacen = almacenes(symbol, name, quantity)
+        nuevo_almacen = Almacenes(symbol, name, quantity)
         self.lista_warehouses.append(nuevo_almacen)
         print("Almacen creado")
-
-    def ver_almacenes(self):
-        if not self.lista_warehouses:
-            print("No hay almacenes. Crea uno")
-            return
-
-        for index, almacen in enumerate(self.lista_warehouses):
-            print(f"{index + 1}. {almacen}")
 
     def insertar_productos(self):
         if not self.lista_warehouses:
