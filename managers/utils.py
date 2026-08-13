@@ -7,14 +7,12 @@ supplierm = SuppliersManager()
 
 
 def guardar_datos(productm=None, supplierm=None):
-    # allow being called with no args for backward compatibility
     if productm is None:
         productm = globals().get("productm")
     if supplierm is None:
         supplierm = globals().get("supplierm")
     datos = {"warehouse": [], "products": [], "suppliers": []}
 
-    # debug: mostrar tamaños para comprobar que recibimos datos
     try:
         print(
             f"DEBUG guardar_datos: warehouses={len(productm.lista_warehouses)}, products_keys={len(productm.lista_productos)}, suppliers={len(supplierm.lista_suppliersmanager)}"

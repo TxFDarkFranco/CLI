@@ -1,4 +1,4 @@
-class almacenes:
+class Almacenes:
     def __init__(self, symbol: str, name: str, quantity: int):
         self.symbol = symbol
         self.name = name

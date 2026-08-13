@@ -1,11 +1,5 @@
 {
-    "warehouse": [
-        {
-            "symbol": "1",
-            "name": "",
-            "quantity": "y"
-        }
-    ],
+    "warehouse": [],
     "products": [],
     "suppliers": []
 }

@@ -42,10 +42,7 @@ def menu():
                 productm.eliminar_almacenes()
             case "9":
                 print("Programa finalizado")
-                break
-            case _:
-                print("Opción no válida. Intenta de nuevo.")
-            
+                break       
             case"10":
                 guardar_datos()
 
