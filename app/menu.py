@@ -1,5 +1,6 @@
 from managers.suppliers_manager import SuppliersManager
 from managers.warehouse_manager import WarehouseManager
+from managers.utils import guardar_datos
 
 
 def menu():
@@ -44,5 +45,8 @@ def menu():
                 break
             case _:
                 print("Opción no válida. Intenta de nuevo.")
+            
+            case"10":
+                guardar_datos()
 
 
