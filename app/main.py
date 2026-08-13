@@ -1,4 +1,4 @@
-from menu import menu
+from app.menu import menu
 
 menu()
 
